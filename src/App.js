@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+// import Data from "./Data/Data";
+import HomeScreen from "./Homescreen/Home";
+import Navbar from "./Navbar/Navbar";
+import { Provider } from "react-redux";
+import store from "./redux/Store";
 
 function App() {
+
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+          <Navbar searchQuery={setSearchQuery}/>
+          <HomeScreen searchQuery={searchQuery} />
+    </Provider>
   );
 }
 
