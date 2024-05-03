@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   flex-wrap: wrap;
   gap: 20px;
   /* border: 1px solid black; */
@@ -40,6 +40,47 @@
         width: 100%;
         justify-content: space-evenly;
         align-items: center;
+        display: flex;
+        align-items: center;
+        /* border: 1px solid black; */
+        .insidebtn {
+          /* background-color: green; */
+          display: flex;
+          justify-content: center;
+          /* padding: 10px; */
+          align-items: center;
+          width: 50px;
+          height: 30px;
+          /* border: 1px solid black; */
+          button{
+            background-color: rgb(64, 168, 64);
+            width: 100%;
+            border: none;
+            height: 100%;
+            color: white;
+            
+          }
+
+         
+        }
+
+        .insidebtntwo {
+          display: flex;
+          font-size: 20px;
+          width: 50px;
+          height: 30px;
+          color: black;
+          border: 1px solid #e7e7e7;
+          p {
+            margin: auto;
+          }
+          button{
+            background-color: transparent;
+            border: none;
+            color: black;
+            
+          }
+        }
     }
   }
 }

@@ -9,9 +9,12 @@ import "./cartstyle.css"
 const HomeScreen = () => {
 
     const dispatch = useDispatch()
-    const products = useSelector(s => s?.products)
+    const products = useSelector(s => {
+        // console.log(s.x.products)
+        return s.x.products
+    })
 
-    console.log({products})
+    // console.log({products})
 
     useEffect(() => {
         dispatch(Fetchprpoduct)
