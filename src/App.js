@@ -11,8 +11,8 @@ function App() {
 
   return (
     <Provider store={store}>
-          <Navbar searchQuery={setSearchQuery}/>
-          <HomeScreen searchQuery={searchQuery} />
+          <Navbar setsearchQuery={setSearchQuery} searchQuery={searchQuery}/>
+          <HomeScreen searchQuery={searchQuery} />       
     </Provider>
   );
 }

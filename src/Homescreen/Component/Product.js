@@ -11,13 +11,11 @@ const Product = ({ data }) => {
     const increment = () => {
         setCuont(count + 1)
         dispatch({ type: cartAstions.INC_QTY, payload: { id : data.id, price : data.price } });
-
     }
 
     const decrement = () => {
         setCuont(count - 1)
         dispatch({ type: cartAstions.DEC_QTY, payload: { id : data.id, price: data.price } });
-
     }
 
 
@@ -32,11 +30,11 @@ const Product = ({ data }) => {
             <div className="footercare">
                 <span className="productPrice">₹{data.price}</span>
                 {
-                    count === 0 ? 
+                    count === 0  && count === -0? 
                     <div className="insidebtn">
                         <button onClick={increment}>ADD</button>
                     </div> :
-                    <div className="insidebtntwo">
+                    <div className="insidebtn">
                             <button onClick={decrement}>-</button>
                             <p>{count}</p>
                             <button onClick={increment}>+</button>
