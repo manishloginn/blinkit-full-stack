@@ -10,11 +10,13 @@ const Cartpopup = forwardRef((_, ref) => {
 
     const [show, setshow] = useState(false)
 
+    const totalprice = useSelector((s) => s.y.totalprice.toFixed(0));
+
     const products = useSelector((state) => {
         const productlist = state.x.products;
         const cart = state.y.cart;
         const list = [];
-        const totalprice = state.y.totalprice
+        console.log("totalprice: " + totalprice)
         productlist?.forEach((product) => {
             if (cart[product.id]) {
                 list.push({ ...product, quantity: cart[product.id] });
@@ -27,6 +29,7 @@ const Cartpopup = forwardRef((_, ref) => {
     });
 
     console.log(products)
+
 
     // const memoizedProducts = useMemo(() => products, [products]);
 
@@ -80,15 +83,15 @@ const Cartpopup = forwardRef((_, ref) => {
                     </div >
                     <div className="btm1">
                         <p>Items total</p>
-                        <p>₹285</p>
+                        <p>₹{totalprice}</p>
                     </div>
                     <div className="btm1">
                         <p>Delivery charge</p>
-                        <p>₹15 FREE</p>
+                        <p>FREE</p>
                     </div>
                     <div className="btm1">
                         <p>Grand total</p>
-                        <p>₹285</p>
+                        <p>₹{totalprice}</p>
                     </div>
                 </div>
 
@@ -98,7 +101,7 @@ const Cartpopup = forwardRef((_, ref) => {
                 </div>
                 <div className="botm">
                     <div>
-                        <b>₹285</b>
+                        <b>₹{totalprice}</b>
                         <p>TOTAL</p>
                     </div>
                     <div className="botmtarget">Login to Proceed
